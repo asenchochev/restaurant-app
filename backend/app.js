@@ -3,7 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { dbConnection } from './database/dbConnection.js';
 import { errormiddleware } from './error/error.js';
-import ReservationRouter from './routes/reservationRoute.js'
+import reservationRouter from './routes/reservationRoute.js'
 
 
 
@@ -18,10 +18,10 @@ app.use(cors({
 );
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use("api/v1/reservation", ReservationRouter)
+app.use("/api/v1/reservation", reservationRouter)
 
 dbConnection();
 
 app.use(errormiddleware)
-a
+
 export default app;
